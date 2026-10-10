@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Regalo Especial 🎁✨</title>
+  <link rel="stylesheet" href="estilo.css" />
+  <!-- Librería ligera para el confeti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+  <!-- Audio de fondo -->
+  <audio id="musicaFondo" src="cancion.mp3" loop preload="auto"></audio>
+
+  <div class="card">
+    <div class="control-musica" id="btnMusica" onclick="toggleMusica()" title="Pausar/Reanudar música">🎵</div>
+
+    <!-- PANTALLA 1: JUEGO DE DESEMPAQUETAR -->
+    <div id="pantallaJuego">
+      <div class="badge">Paquete Especial Detectado 📦✨</div>
+      <h1>¿Qué habrá adentro? 🤔</h1>
+      <p>Hay un misterio dentro de la bolsa física. Toca el regalo repetidas veces para romper el sello y descubrirlo.</p>
+
+      <div class="caja-regalo-container" onclick="darGolpe()">
+        <div class="icono-regalo" id="iconoRegalo">🎁</div>
+      </div>
+
+      <div class="barra-progreso-bg">
+        <div class="barra-progreso-fill" id="barraProgreso"></div>
+      </div>
+
+      <div class="estado-texto" id="mensajeToques">Toca el regalo para comenzar 👆</div>
+    </div>
+
+    <!-- PANTALLA 2: REVELACIÓN -->
+    <div id="pantallaRevelada">
+      <div class="badge">¡Sello Roto! 🎉✨</div>
+      <h1>¡Alerta de Caramandungas! 🥐😋</h1>
+      
+      <img src="caramandungas.png" alt="Caramandungas ricas" class="img-premio" />
+
+      <p>
+        ¡Abre la bolsa real! Adentro están calientitas esperando por ti.
+        <br><br>
+        <strong>Condición única:</strong> ¡que los disfrutes muchísimo! Que llenen tu pancita y hagan brillar esos ojitos lindos. 😉
+      </p>
+
+      <!-- Enlace directo a tu WhatsApp -->
+      <a href="https://wa.me/51910318539?text=¡Ya%20abrí%20el%20regalo!%20🥐😋%20Y%20me%20los%20comi%20todo.😉" 
+         class="btn-wsp" target="_blank">
+        Avisar que ya las recibí 📲
+      </a>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

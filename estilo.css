@@ -1,0 +1,165 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: radial-gradient(circle at top, #fef3c7, #fed7aa);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  overflow-x: hidden;
+  color: #78350f;
+}
+
+.card {
+  background: #ffffff;
+  padding: 30px 24px;
+  border-radius: 28px;
+  box-shadow: 0 20px 40px rgba(180, 83, 9, 0.15);
+  max-width: 420px;
+  width: 100%;
+  text-align: center;
+  border: 2px solid #fde68a;
+  position: relative;
+}
+
+.badge {
+  display: inline-block;
+  background: #fef3c7;
+  color: #b45309;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  border: 1px solid #fcd34d;
+}
+
+h1 {
+  font-size: 1.55rem;
+  margin-bottom: 10px;
+  font-weight: 800;
+  color: #92400e;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #78350f;
+  margin-bottom: 20px;
+}
+
+/* Caja de regalo interactiva */
+.caja-regalo-container {
+  margin: 20px auto;
+  width: 140px;
+  height: 140px;
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.icono-regalo {
+  font-size: 5.5rem;
+  transition: transform 0.15s ease;
+  filter: drop-shadow(0 10px 15px rgba(217, 119, 6, 0.3));
+}
+
+.animar-vibrar {
+  animation: sacudida 0.4s ease-in-out;
+}
+
+@keyframes sacudida {
+  0%, 100% { transform: rotate(0deg) scale(1); }
+  25% { transform: rotate(-10deg) scale(1.1); }
+  75% { transform: rotate(10deg) scale(1.1); }
+}
+
+.barra-progreso-bg {
+  background: #f3f4f6;
+  height: 10px;
+  border-radius: 10px;
+  width: 80%;
+  margin: 10px auto 18px;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+}
+
+.barra-progreso-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #f59e0b, #d97706);
+  transition: width 0.3s ease;
+}
+
+.estado-texto {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #d97706;
+  min-height: 24px;
+}
+
+/* Pantalla revelada (oculta al inicio) */
+#pantallaRevelada {
+  display: none;
+  animation: zoomIn 0.5s ease forwards;
+}
+
+@keyframes zoomIn {
+  from { opacity: 0; transform: scale(0.85); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.img-premio {
+  max-width: 200px;
+  width: 100%;
+  border-radius: 18px;
+  margin: 12px auto 18px;
+  box-shadow: 0 10px 20px rgba(180, 83, 9, 0.2);
+}
+
+.btn-wsp {
+  padding: 14px 20px;
+  border-radius: 16px;
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #25d366;
+  color: #ffffff;
+  box-shadow: 0 6px 16px rgba(37, 211, 102, 0.35);
+  transition: transform 0.2s ease;
+  width: 100%;
+}
+
+.btn-wsp:hover {
+  transform: scale(1.03);
+}
+
+/* Control de música flotante */
+.control-musica {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: #fef3c7;
+  border: 1px solid #fcd34d;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  cursor: pointer;
+}
